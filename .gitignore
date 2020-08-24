@@ -2,6 +2,9 @@
 nginx/*.crt
 nginx/*.key
 
+# Firebase
+firebase-service-account.json
+
 # Logs
 logs
 *.log

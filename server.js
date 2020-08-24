@@ -7,16 +7,19 @@ const commandMap = {
   rolldice: require('./commands/rolldice'),
   assignnumbers: require('./commands/assignnumbers'),
   help: require('./commands/help'),
+  listcharacters: require('./commands/listcharacters'),
 };
 
 const aliasMap = {
   rolldice: ['rd'],
   assignnumbers: ['an'],
+  help: ['h'],
+  listcharacters: ['lc'],
 };
 
 const aliasFlatMap = generateAliasFlatMap(commandMap, aliasMap);
 
-discordClient.on('message', (message) => {
+discordClient.on('message', async (message) => {
   const messageContents = message.content.split(' ');
   const command = messageContents[1];
 
@@ -29,9 +32,8 @@ discordClient.on('message', (message) => {
       (messageContents.length > 2) ?
         messageContents.slice(2, messageContents.length) : [];
 
-    message.channel.send(
-        commandMap[aliasFlatMap[command]](commandParameters),
-    );
+    const res = await commandMap[aliasFlatMap[command]](commandParameters);
+    await message.channel.send(res);
   }
 });
 

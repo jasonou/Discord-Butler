@@ -16,6 +16,8 @@
   "dependencies": {
     "discord.js": "12.2.0",
     "dotenv": "8.2.0",
+    "firebase": "7.19.0",
+    "firebase-admin": "9.1.1",
     "pm2": "4.4.1"
   },
   "devDependencies": {
