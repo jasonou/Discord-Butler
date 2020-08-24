@@ -1,7 +1,7 @@
 # Discord-Butler
 
 ### Development
-> npm run dev
+> npm run pm2:dev
 
 ### Production
-> npm start
+> npm run pm2
