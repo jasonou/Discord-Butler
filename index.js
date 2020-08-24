@@ -1,4 +1,6 @@
-const client = require('./client/client');
+const discordClient = require('./client/client');
+const server = require('./client/server');
+
 const isValidTrigger = require('./utils/butlerTrigger');
 
 const commandMap = {
@@ -6,7 +8,7 @@ const commandMap = {
   assignnumbers: require('./commands/assignnumbers')
 };
 
-client.on('message', message => {
+discordClient.on('message', message => {
   const messageContents = message.content.split(" ");
 
   if (isValidTrigger(messageContents[0]) && messageContents.length > 1 && commandMap.hasOwnProperty(messageContents[1])) {
