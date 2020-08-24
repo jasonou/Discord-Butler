@@ -1,13 +1,16 @@
 const rolldice = (commandParameters) => {
   let rolledDice = 0;
-  let diceValue = 6;
+  let maxRoll = 6;
 
-  if (commandParameters.length && !isNaN(commandParameters[0])) {
-    diceValue = commandParameters[0];
+  if (
+    commandParameters.length &&
+    !isNaN(commandParameters[0])
+  ) {
+    maxRoll = commandParameters[0];
   }
 
-  rolledDice = Math.floor((Math.random() * parseInt(diceValue)) + 1);
-  return `Yes my Lord. The ${diceValue} sided :game_die: rolled: **${rolledDice}**`;
-}
+  rolledDice = Math.floor((Math.random() * parseInt(maxRoll)) + 1);
+  return `The ${maxRoll} sided :game_die: rolled: **${rolledDice}**`;
+};
 
 module.exports = rolldice;
