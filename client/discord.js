@@ -5,7 +5,7 @@ require('dotenv').config()
 const TOKEN = process.env.TOKEN;
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as: ${client.user.tag}`);
 });
 
 client.login(TOKEN);
