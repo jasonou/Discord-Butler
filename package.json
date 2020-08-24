@@ -1,18 +1,18 @@
 {
   "name": "discord-butler",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Discord Butler Bot",
+  "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint . --fix",
-    "start": "node --optimize-for-size --max-old-space-size=460 --gc-interval=100 index.js",
-    "pm2": "pm2 start --no-daemon npm -- run start",
+    "start": "node --optimize-for-size --max-old-space-size=460 --gc-interval=100 ./bin/start.js",
+    "pm2": "pm2 start npm -- run start",
     "dev": "npm run lint && npm run start",
-    "pm2:dev": "pm2 start --no-daemon --watch --ignore-watch='logs node_modules' npm -- run dev",
+    "pm2:dev": "pm2 start --watch --ignore-watch='logs node_modules' npm -- run dev",
+    "pm2:log": "pm2 log",
     "pm2:kill": "pm2 kill"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "discord.js": "12.2.0",
     "dotenv": "8.2.0",

@@ -34,3 +34,10 @@ discordClient.on('message', (message) => {
     );
   }
 });
+
+module.exports = {
+  stop() {
+    discordClient.destroy();
+    process.exit(0);
+  },
+};
