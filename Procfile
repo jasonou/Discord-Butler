@@ -1,1 +1,1 @@
-worker: npm run pm2
+worker: npm start
