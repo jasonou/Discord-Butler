@@ -17,9 +17,9 @@ const listfights = async (commandParameters) => {
 
   const fightFormattedInfo = [];
   for (const [name, stats] of Object.entries(fightList)) {
-    const characters = name.split('-vs-');
+    const characters = stats.name.split('-vs-');
     fightFormattedInfo.push(
-        `[${name}]` +
+        `[#${name} - ${stats.name}]` +
         `\nStatus: ${stats.status}` +
         `\nTurn: ${stats.turn}` +
         `\n${characters[0]}: 💖 ${stats[characters[0]]} vs ` +
