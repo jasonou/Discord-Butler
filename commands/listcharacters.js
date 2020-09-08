@@ -27,7 +27,7 @@ const listcharacters = async (commandParameters) => {
   for (const [name, stats] of Object.entries(characterList)) {
     const element = elementMapping[stats.element];
     const formattedName = `- [${element}${name}]`;
-    const paddingAmount = 16 - formattedName.length;
+    const paddingAmount = 20 - formattedName.length;
     let padding = '';
     for (let i = 0; i < paddingAmount; ++i) {
       padding += ' ';
