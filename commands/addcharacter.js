@@ -13,15 +13,14 @@ const addcharacter = async (commandParameters) => {
     special: parseInt(commandParameters[4]),
   };
 
-  await firestore.collection('characters').doc('jinkazama').set(character);
-
+  await firestore.collection('characters').doc(character.name).set(character);
 
   const characterString =
     `- [${character.name}]` +
-    ` <hp: ${character.hp}>` +
-    ` <att: ${character.attack}>` +
-    ` <luck: ${character.luck}>` +
-    ` <special: ${character.special}>`;
+    ` | 💖 ${character.hp}` +
+    ` | 🔪 ${character.attack}` +
+    ` | 🍀 ${character.luck}` +
+    ` | 🌟 ${character.special} |`;
   return `\`\`\`CSS\n${characterString}\n*Successfully Added.\`\`\``;
 };
 
