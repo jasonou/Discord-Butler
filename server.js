@@ -8,6 +8,8 @@ const commandMap = {
   assignnumbers: require('./commands/assignnumbers'),
   help: require('./commands/help'),
   listcharacters: require('./commands/listcharacters'),
+  addcharacter: require('./commands/addcharacter'),
+  deletecharacter: require('./commands/deletecharacter'),
 };
 
 const aliasMap = {
@@ -15,6 +17,8 @@ const aliasMap = {
   assignnumbers: ['an'],
   help: ['h'],
   listcharacters: ['lc'],
+  addcharacter: ['ac'],
+  deletecharacter: ['dc'],
 };
 
 const aliasFlatMap = generateAliasFlatMap(commandMap, aliasMap);
