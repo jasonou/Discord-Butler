@@ -17,11 +17,18 @@ const listcharacters = async (commandParameters) => {
 
   const characterFormattedInfo = [];
   for (const [name, stats] of Object.entries(characterList)) {
+    const paddingAmount = 13 - `[${name}]`.length;
+    let padding = '';
+    for (let i = 0; i < paddingAmount; ++i) {
+      padding += ' ';
+    }
+
     characterFormattedInfo.push(
-        `- [${name}] <hp: ${stats.hp}>` +
-        ` <att: ${stats.attack}>` +
-        ` <luck: ${stats.luck}>` +
-        ` <special: ${stats.special}>`,
+        `- [${name}]${padding}` +
+        ` | 💖 ${stats.hp}${stats.hp > 9 ? '' : ' '}` +
+        ` | 🔪 ${stats.attack}${stats.attack > 9 ? '' : ' '}` +
+        ` | 🍀 ${stats.luck}${stats.luck > 9 ? '' : ' '}` +
+        ` | 🌟 ${stats.special}${stats.special > 9 ? '' : ' '} |`,
     );
   }
 
