@@ -20,10 +20,10 @@ const listfights = async (commandParameters) => {
     const characters = stats.name.split('-vs-');
     fightFormattedInfo.push(
         `[#${name} - ${stats.name}]` +
-        `\nStatus: ${stats.status}` +
-        `\nTurn: ${stats.turn}` +
-        `\n${characters[0]}: 💖 ${stats[characters[0]]} vs ` +
-        `${characters[1]}: 💖 ${stats[characters[1]]}`
+        `\n#status: ${stats.status}` +
+        `\n#turn: ${stats.turn}` +
+        `\n#${characters[0]}: 💖${stats[characters[0]]} vs. ` +
+        `#${characters[1]}: 💖${stats[characters[1]]}`
     );
   }
 

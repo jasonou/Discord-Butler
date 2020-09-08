@@ -17,10 +17,10 @@ const addcharacter = async (commandParameters) => {
 
   const characterString =
     `- [${character.name}]` +
-    ` | 💖 ${character.hp}` +
-    ` | 🔪 ${character.attack}` +
-    ` | 🍀 ${character.luck}` +
-    ` | 🌟 ${character.special} |`;
+    ` | 💖${character.hp}` +
+    ` | 🔪${character.attack}` +
+    ` | 🍀${character.luck}` +
+    ` | 🌟${character.special} |`;
   return `\`\`\`CSS\n${characterString}\n*Successfully Added.\`\`\``;
 };
 

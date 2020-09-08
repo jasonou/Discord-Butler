@@ -25,10 +25,10 @@ const listcharacters = async (commandParameters) => {
 
     characterFormattedInfo.push(
         `- [${name}]${padding}` +
-        ` | 💖 ${stats.hp}${stats.hp > 9 ? '' : ' '}` +
-        ` | 🔪 ${stats.attack}${stats.attack > 9 ? '' : ' '}` +
-        ` | 🍀 ${stats.luck}${stats.luck > 9 ? '' : ' '}` +
-        ` | 🌟 ${stats.special}${stats.special > 9 ? '' : ' '} |`,
+        ` | 💖${stats.hp}${stats.hp > 9 ? '' : ' '}` +
+        ` | 🔪${stats.attack}${stats.attack > 9 ? '' : ' '}` +
+        ` | 🍀${stats.luck}${stats.luck > 9 ? '' : ' '}` +
+        ` | 🌟${stats.special}${stats.special > 9 ? '' : ' '} |`,
     );
   }
 
