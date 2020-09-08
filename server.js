@@ -12,7 +12,7 @@ const commandMap = {
   deletecharacter: require('./commands/deletecharacter'),
   listfights: require('./commands/listfights'),
   deletefight: require('./commands/deletefight'),
-  startfight: require('./commands/startfight')
+  startfight: require('./commands/startfight'),
 };
 
 const aliasMap = {
@@ -24,7 +24,7 @@ const aliasMap = {
   deletecharacter: ['dc'],
   listfights: ['lf'],
   deletefight: ['df'],
-  startfight: ['sf']
+  startfight: ['sf'],
 };
 
 const aliasFlatMap = generateAliasFlatMap(commandMap, aliasMap);

@@ -23,12 +23,13 @@ const listfights = async (commandParameters) => {
         `\n#status: ${stats.status}` +
         `\n#turn: ${stats.turn}` +
         `\n#${characters[0]}: 💖${stats[characters[0]]} vs. ` +
-        `#${characters[1]}: 💖${stats[characters[1]]}`
+        `#${characters[1]}: 💖${stats[characters[1]]}`,
     );
   }
 
-  if (fightFormattedInfo.length === 0)
+  if (fightFormattedInfo.length === 0) {
     return `No fights at the moment. Please start one.`;
+  }
 
   return `\`\`\`CSS\n${fightFormattedInfo.join('\n')}\`\`\``;
 };
