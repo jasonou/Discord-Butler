@@ -12,19 +12,29 @@ const getCharacterList = async () => {
   return characterMap;
 };
 
+const elementMapping = {
+  fire: '🔥',
+  earth: '🌳',
+  water: '💧',
+  wind: '💨',
+  lightning: '⚡️',
+}
+
 const listcharacters = async (commandParameters) => {
   const characterList = await getCharacterList();
 
   const characterFormattedInfo = [];
   for (const [name, stats] of Object.entries(characterList)) {
-    const paddingAmount = 16 - `[${name}]`.length;
+    const element = elementMapping[stats.element];
+    const formattedName = `- [${element}${name}]`;
+    const paddingAmount = 16 - formattedName.length;
     let padding = '';
     for (let i = 0; i < paddingAmount; ++i) {
       padding += ' ';
     }
 
     characterFormattedInfo.push(
-        `- [${name}]${padding}` +
+        `${formattedName}${padding}` +
         ` | 💖${stats.hp}${stats.hp > 9 ? '' : ' '}` +
         ` | 🔪${stats.attack}${stats.attack > 9 ? '' : ' '}` +
         ` | 🍀${stats.luck}${stats.luck > 9 ? '' : ' '}` +

@@ -35,3 +35,4 @@ const listfights = async (commandParameters) => {
 };
 
 module.exports = listfights;
+//🔥💧💨⚡️🌳 test
