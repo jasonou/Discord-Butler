@@ -7,7 +7,6 @@ const addhunter = async (commandParameters) => {
   if (isInvalidCommand.length > 0) return isInvalidCommand;
 
   const hunter = {
-    assist_points: 0,
     assists: 0,
     completed: 0,
     pending_quartz: 0

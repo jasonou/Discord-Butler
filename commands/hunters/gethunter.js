@@ -15,11 +15,13 @@ const gethunter = async (commandParameters) => {
     const formattedHunterInfo = [];
     const formattedName = `- [${commandParameters[0]}]`;
 
+    const combinedLevel = Math.floor(hunterData.completed + hunterData.assists/2);
+
     formattedHunterInfo.push(
       `${formattedName}${getPaddingAmount(formattedName, 14)}` +
       ` | 📜${hunterData.completed}${getPaddingAmount(hunterData.completed, 3)}` +
       ` | 🤝${hunterData.assists}${getPaddingAmount(hunterData.assists, 3)}` +
-      ` | 🔺${hunterData.assist_points}${getPaddingAmount(hunterData.assist_points, 3)}` +
+      ` | 🔺${combinedLevel}${getPaddingAmount(combinedLevel, 4)}` +
       ` | 💎${hunterData.pending_quartz}${getPaddingAmount(hunterData.pending_quartz, 6)} |`,
     );
 

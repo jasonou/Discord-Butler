@@ -19,12 +19,13 @@ const listhunters = async (commandParameters) => {
   const formattedHunterInfo = [];
   for (const [name, stats] of Object.entries(hunterList)) {
     const formattedName = `- [${name}]`;
+    const combinedLevel = Math.floor(stats.completed + stats.assists/2);
 
     formattedHunterInfo.push(
       `${formattedName}${getPaddingAmount(formattedName, 14)}` +
       ` | 📜${stats.completed}${getPaddingAmount(stats.completed, 3)}` +
       ` | 🤝${stats.assists}${getPaddingAmount(stats.assists, 3)}` +
-      ` | 🔺${stats.assist_points}${getPaddingAmount(stats.assist_points, 3)}` +
+      ` | 🔺${combinedLevel}${getPaddingAmount(combinedLevel, 4)}` +
       ` | 💎${stats.pending_quartz}${getPaddingAmount(stats.pending_quartz, 6)} |`,
     );
   }

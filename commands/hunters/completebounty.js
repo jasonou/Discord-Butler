@@ -31,8 +31,7 @@ const completebounty = async (commandParameters) => {
       }
 
       const secondHunter = {
-        assists: parseInt(secondHunterData.assists) + 1,
-        assist_points: parseInt(secondHunterData.assist_points) + 1
+        assists: parseInt(secondHunterData.assists) + 1
       }
 
       await firestore.collection('hunters').doc(commandParameters[0]).set(firstHunter, { merge: true });
