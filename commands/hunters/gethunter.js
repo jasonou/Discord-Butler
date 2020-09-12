@@ -1,5 +1,6 @@
 const firestore = require('../../server/firebase');
 const isValidCommand = require('../../utils/isValidParams');
+const getPaddingAmount = require('../../utils/getPaddingAmount');
 
 const gethunter = async (commandParameters) => {
   const exampleCommand = `butler, gethunter <hunter name>`;
@@ -12,11 +13,16 @@ const gethunter = async (commandParameters) => {
   } else {
     const hunterData = hunterdoc.data();
     const formattedHunterInfo = [];
-    formattedHunterInfo.push(`- [${commandParameters[0]}]`);
-    formattedHunterInfo.push(`#completed_bounties: ${hunterData.completed}`);
-    formattedHunterInfo.push(`#assists: ${hunterData.assists}`);
-    formattedHunterInfo.push(`#available_assist_points: ${hunterData.assist_points}`);
-    formattedHunterInfo.push(`#pending_quartz_rewards: ${hunterData.pending_quartz}`);
+    const formattedName = `- [${commandParameters[0]}]`;
+
+    formattedHunterInfo.push(
+      `${formattedName}${getPaddingAmount(formattedName, 14)}` +
+      ` | 📜${hunterData.completed}${getPaddingAmount(hunterData.completed, 3)}` +
+      ` | 🤝${hunterData.assists}${getPaddingAmount(hunterData.assists, 3)}` +
+      ` | 🔺${hunterData.assist_points}${getPaddingAmount(hunterData.assist_points, 3)}` +
+      ` | 💎${hunterData.pending_quartz}${getPaddingAmount(hunterData.pending_quartz, 6)} |`,
+    );
+
     return `\`\`\`CSS\n${formattedHunterInfo.join('\n')}\`\`\``;
   }
 };

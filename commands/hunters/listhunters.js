@@ -1,4 +1,5 @@
 const firestore = require('../../server/firebase');
+const getPaddingAmount = require('../../utils/getPaddingAmount');
 
 const getHunterList = async () => {
   const characterMap = {};
@@ -17,11 +18,15 @@ const listhunters = async (commandParameters) => {
 
   const formattedHunterInfo = [];
   for (const [name, stats] of Object.entries(hunterList)) {
-    formattedHunterInfo.push(`- [${name}]`);
-    formattedHunterInfo.push(`#completed_bounties: ${stats.completed}`);
-    formattedHunterInfo.push(`#assists: ${stats.assists}`);
-    formattedHunterInfo.push(`#available_assist_points: ${stats.assist_points}`);
-    formattedHunterInfo.push(`#pending_quartz_rewards: ${stats.pending_quartz}\n`);
+    const formattedName = `- [${name}]`;
+
+    formattedHunterInfo.push(
+      `${formattedName}${getPaddingAmount(formattedName, 14)}` +
+      ` | 📜${stats.completed}${getPaddingAmount(stats.completed, 3)}` +
+      ` | 🤝${stats.assists}${getPaddingAmount(stats.assists, 3)}` +
+      ` | 🔺${stats.assist_points}${getPaddingAmount(stats.assist_points, 3)}` +
+      ` | 💎${stats.pending_quartz}${getPaddingAmount(stats.pending_quartz, 6)} |`,
+    );
   }
 
   if (formattedHunterInfo.length === 0) {
