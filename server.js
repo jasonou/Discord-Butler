@@ -13,6 +13,13 @@ const commandMap = {
   listfights: require('./commands/listfights'),
   deletefight: require('./commands/deletefight'),
   startfight: require('./commands/startfight'),
+  addhunter: require('./commands/hunters/addhunter'),
+  deletehunter: require('./commands/hunters/deletehunter'),
+  edithunter: require('./commands/hunters/edithunter'),
+  gethunter: require('./commands/hunters/gethunter'),
+  listhunters: require('./commands/hunters/listhunters'),
+  completebounty: require('./commands/hunters/completebounty'),
+  rewardedhunter: require('./commands/hunters/rewardedhunter')
 };
 
 const aliasMap = {
@@ -25,6 +32,13 @@ const aliasMap = {
   listfights: ['lf'],
   deletefight: ['df'],
   startfight: ['sf'],
+  addhunter: ['ah'],
+  deletehunter: ['dh'],
+  edithunter: ['eh'],
+  gethunter: ['gh'],
+  listhunters: ['lh'],
+  completebounty: ['cb'],
+  rewardedhunter: ['rh']
 };
 
 const aliasFlatMap = generateAliasFlatMap(commandMap, aliasMap);
