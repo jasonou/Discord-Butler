@@ -16,7 +16,6 @@ const gethunter = async (commandParameters) => {
     formattedHunterInfo.push(`#completed_bounties: ${hunterData.completed}`);
     formattedHunterInfo.push(`#assists: ${hunterData.assists}`);
     formattedHunterInfo.push(`#available_assist_points: ${hunterData.assist_points}`);
-    formattedHunterInfo.push(`#in_progress_bounties: ${hunterData.in_progress}`);
     formattedHunterInfo.push(`#pending_quartz_rewards: ${hunterData.pending_quartz}`);
     return `\`\`\`CSS\n${formattedHunterInfo.join('\n')}\`\`\``;
   }

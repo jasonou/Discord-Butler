@@ -21,8 +21,11 @@ const listhunters = async (commandParameters) => {
     formattedHunterInfo.push(`#completed_bounties: ${stats.completed}`);
     formattedHunterInfo.push(`#assists: ${stats.assists}`);
     formattedHunterInfo.push(`#available_assist_points: ${stats.assist_points}`);
-    formattedHunterInfo.push(`#in_progress_bounties: ${stats.in_progress}`);
     formattedHunterInfo.push(`#pending_quartz_rewards: ${stats.pending_quartz}\n`);
+  }
+
+  if (formattedHunterInfo.length === 0) {
+    return `No hunters at the moment. Please add one.`;
   }
 
   return `\`\`\`CSS\n${formattedHunterInfo.join('\n')}\`\`\``;

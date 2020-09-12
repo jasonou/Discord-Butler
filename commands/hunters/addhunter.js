@@ -10,7 +10,6 @@ const addhunter = async (commandParameters) => {
     assist_points: 0,
     assists: 0,
     completed: 0,
-    in_progress: 0,
     pending_quartz: 0
   };
 
