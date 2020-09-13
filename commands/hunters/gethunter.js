@@ -19,9 +19,9 @@ const gethunter = async (commandParameters) => {
 
     formattedHunterInfo.push(
       `${formattedName}${getPaddingAmount(formattedName, 14)}` +
+      ` | 🔺${combinedLevel}${getPaddingAmount(combinedLevel, 4)}` +
       ` | 📜${hunterData.completed}${getPaddingAmount(hunterData.completed, 3)}` +
       ` | 🤝${hunterData.assists}${getPaddingAmount(hunterData.assists, 3)}` +
-      ` | 🔺${combinedLevel}${getPaddingAmount(combinedLevel, 4)}` +
       ` | 💎${hunterData.pending_quartz}${getPaddingAmount(hunterData.pending_quartz, 6)} |`,
     );
 
