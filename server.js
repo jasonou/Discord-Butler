@@ -19,7 +19,8 @@ const commandMap = {
   gethunter: require('./commands/hunters/gethunter'),
   listhunters: require('./commands/hunters/listhunters'),
   completebounty: require('./commands/hunters/completebounty'),
-  rewardedhunter: require('./commands/hunters/rewardedhunter')
+  rewardedhunter: require('./commands/hunters/rewardedhunter'),
+  getlegend: require('./commands/bounties/getlegend')
 };
 
 const aliasMap = {
@@ -38,7 +39,8 @@ const aliasMap = {
   gethunter: ['gh'],
   listhunters: ['lh'],
   completebounty: ['cb'],
-  rewardedhunter: ['rh']
+  rewardedhunter: ['rh'],
+  getlegend: ['gl']
 };
 
 const aliasFlatMap = generateAliasFlatMap(commandMap, aliasMap);
